@@ -1,3 +1,5 @@
+(* #load "graphics.cma";;    nécéssaire pour WinCaml     *)
+
 (*paramètres*)
 let hauteur = 200
 and largeur = 200;;
@@ -84,7 +86,6 @@ let cube = [|1;7;2;7;1;7;3;7;4;
 	     1;7;2;7;6;7;3;7;4|];;
 *)
 
-(* #load "graphics.cma";;    nécéssaire pour WinCaml     *)
 open Graphics;;
 open_graph (" "^(string_of_int largeur)^"x"^(string_of_int hauteur));;
 auto_synchronize false;;
@@ -691,8 +692,8 @@ let boucle () =
 	  |' '  -> resoudre (); pas_a_pas () (* espace *)
 	  |'\r' -> resolution_complete ()    (* entrée *)
 	  |'\b' -> undo ()                   (* backspace *)
-	  |'l' -> reinitialiser_cube ()     
-	  |'m' -> melange ()             
+	  |'l'  -> reinitialiser_cube ()     
+	  |'m'  -> melange ()             
 	  |'a'  -> reinitialiser_euler ()
 	  |'1'  -> tourne 1
 	  |'2'  -> tourne 2
